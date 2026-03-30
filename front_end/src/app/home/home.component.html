@@ -1,0 +1,39 @@
+<div class="container-fluid h-100 d-flex justify-content-center align-items-center bg-light">
+    
+
+    
+    <div class="chat-container shadow">
+
+        <!-- Header -->
+        <div class="chat-header bg-primary text-white p-3">
+            <h5 class="mb-0">banking assistant bot</h5>
+        </div>
+
+        <!-- Chat Body -->
+        <div class="chat-body p-3" id="chatBody">
+            <ng-container *ngIf="messages$ | async as messages">
+                <ng-container *ngFor="let m of messages">
+                    <div class="message mb-2"
+                         [ngClass]="{
+                           'bot-message': m.type === 'bot',
+                           'user-message text-end': m.type === 'user'
+                         }">
+                  
+                      <span>{{ m.message }}</span>
+                  
+                    </div>
+                  </ng-container>
+            </ng-container>          
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-footer p-2 border-top">
+            <div class="input-group">
+                <input [formControl]="userInput" type="text" class="form-control" placeholder="Type a message..." />
+                <button (click)="add_user_query()" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
