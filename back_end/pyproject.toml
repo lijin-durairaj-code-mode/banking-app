@@ -6,6 +6,10 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastmcp>=3.1.1",
+    "langchain>=1.2.14",
+    "langchain-huggingface>=1.2.1",
     "psycopg2-binary>=2.9.11",
     "sqlalchemy>=2.0.48",
+    "torch>=2.11.0",
+    "transformers>=5.4.0",
 ]
